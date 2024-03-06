@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Alumnos</title>
+    <link rel="stylesheet" href="./public/styles.css">
+</head>
+<body>
+    <h1 style="margin-left: 160px;">CRUD Alumnos</h1>
+    <div id="container">
+        <button id="add-btn">Agregar Alumno</button>
+        <table id="alumnos-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Escuela</th>
+                    <th>Dificultad</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="alumnos-body">
+                <!-- aquí salen los alumnos agregados -->
+            </tbody>
+        </table>
+    </div>
+
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Agregar/Editar Alumno</h2>
+        <form id="alumno-form">
+            <input type="hidden" id="alumno-id">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" required>
+            <label for="escuela">Escuela:</label>
+            <select id="escuela" required>
+                <!-- radiobutton parte del examen -->
+                <option value="Bachillerato 1">Bachillerato 1</option>
+                <option value="Bachillerato 2">Bachillerato 2</option>
+                <option value="Bachillerato 3">Bachillerato 3</option>
+            </select>
+            <label for="materias">Materias:</label>
+            <div id="materias-checkboxes">
+                <!-- Checkbox parte del examen -->
+                <input type="checkbox" id="matematicas" name="materia" value="Matemáticas">
+                <label for="matematicas">Matemáticas</label>
+                <input type="checkbox" id="espanol" name="materia" value="Español">
+                <label for="espanol">Español</label>
+                <input type="checkbox" id="historia" name="materia" value="Historia">
+                <label for="historia">Historia</label>
+                <input type="checkbox" id="ciencias" name="materia" value="Ciencias">
+                <label for="ciencias">Ciencias</label>
+            </div>
+            <!-- Select parte del examen -->
+            <label for="dificultad">Dificultad:</label><br>
+            <input type="radio" id="facil" name="dificultad" value="facil" checked>
+            <label for="facil">Fácil</label><br>
+            <input type="radio" id="medio" name="dificultad" value="medio">
+            <label for="medio">Medio</label><br>
+            <input type="radio" id="dificil" name="dificultad" value="dificil">
+            <label for="dificil">Difícil</label><br>
+            <button type="submit" id="save-btn">Guardar</button>
+        </form>
+    </div>
+</div>
+
+
+    <script src="./main.js"></script>
+</body>
+</html>
